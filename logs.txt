@@ -54,3 +54,21 @@
 2020-11-22 18:34:52.425015 : Menú
 2020-11-22 18:34:57.065303 : Consulta de saldo por empresa
 2020-11-22 18:35:11.650887 : Menú
+2020-11-23 22:23:43.000617 : Se inicia el programa
+2020-11-23 22:23:43.006309 : Menú
+2020-11-23 22:23:45.712216 : Consulta de saldo por empresa
+2020-11-23 22:25:33.271454 : Se inicia el programa
+2020-11-23 22:25:33.271680 : Menú
+2020-11-23 22:25:34.978569 : Consulta de saldo por empresa
+2020-11-23 22:25:44.969460 : Menú
+2020-11-23 22:26:25.601836 : Se inicia el programa
+2020-11-23 22:26:25.601887 : Menú
+2020-11-23 22:26:27.549574 : Consulta de saldo por empresa
+2020-11-23 22:26:59.319671 : Se inicia el programa
+2020-11-23 22:26:59.319751 : Menú
+2020-11-23 22:27:00.675684 : Consulta de saldo por empresa
+2020-11-23 22:27:08.467813 : Menú
+2020-11-23 22:33:55.623056 : Se inicia el programa
+2020-11-23 22:33:55.623136 : Menú
+2020-11-23 22:33:57.085863 : Consulta de saldo por empresa
+2020-11-23 22:34:16.363074 : Menú

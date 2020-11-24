@@ -61,45 +61,84 @@ def BuscarUsuariosPorEmpresa(emp_buscada, archivo):
         print("Hubo un problema con los datos del archivo. Verifique que no se hayan eliminado columnas del mismo.")
 
 def BuscarSaldoPorEmpresa(emp_buscada, archivo_clientes, archivo_viajes):
-    try:
-        with open (archivo_clientes) as f_clientes, open (archivo_viajes) as f_viajes:
-            clientes_csv = csv.reader(f_clientes)
-            viajes_csv = csv.reader(f_viajes)
-            next(clientes_csv, None)
-            next(viajes_csv, None) #Estos next son para saltear los encabezadores
 
-            cliente = next(clientes_csv, None)
+    try:
+        lista_viajes = []
+        with open (archivo_viajes) as f_viajes:
+            viajes_csv = csv.reader(f_viajes)
+            next(viajes_csv, None) #Este next es para saltear los encabezadores
             viaje = next(viajes_csv, None)
+            while viaje:
+                lista_viajes.append(viaje)
+                viaje = next(viajes_csv, None)
+    except IOError:
+        print("Hubo un error al intentar abrir el archivo de viajes")
+
+    try:
+        with open (archivo_clientes) as f_clientes:
+            clientes_csv = csv.reader(f_clientes)
+            next(clientes_csv, None) #Este next es para saltear los encabezadores
+            cliente = next(clientes_csv, None)
             saldo = 0
             while cliente:
-                print(f"{cliente[2]} = {viaje[0]}")
-                while viaje and viaje[0] == cliente[2]:
-                    try:
-                        monto = float(viaje[2])
-                    except ValueError:
-                        print("Se detectó en la columna de monto un valor no numérico")
-                    print(f"monto: {monto}")
-                    saldo += monto
-                    viaje = next(viajes_csv, None)
+                if emp_buscada in cliente[5]:
+                    emp_buscada = cliente[5]
+                    for viaje in lista_viajes:
+                        if viaje[0] == cliente[2]:
+                            try:
+                                monto = float(viaje[2])
+                            except ValueError:
+                                print("Se detectó en la columna de monto un valor no numérico")
+                            saldo += monto
                 cliente = next(clientes_csv, None)
-            # while viaje:
-            #     while cliente and viaje[0] == cliente[2]:
-            #         try:
-            #             monto = float(viaje[2])
-            #         except ValueError:
-            #             print("Se detectó en la columna de monto un valor no numérico")
-            #         print(f"monto: {monto}")
-            #         saldo += monto
-            #         cliente = next(clientes_csv, None)
-            #     viaje = next(viajes_csv, None)
+
             print("---------------------------------------------")
-            print(f"{emp_buscada} ${saldo}")
+            print(f"{emp_buscada}: ${saldo}")
             print("---------------------------------------------")
     except IOError:
         print("Hubo un error al intentar abrir el archivo")
     except IndexError:
         print("Hubo un problema con los datos del archivo. Verifique que no se hayan eliminado columnas del mismo.")
 
+    # try:
+    #     with open (archivo_clientes) as f_clientes, open (archivo_viajes) as f_viajes:
+    #         clientes_csv = csv.reader(f_clientes)
+    #         viajes_csv = csv.reader(f_viajes)
+    #         next(clientes_csv, None)
+    #         next(viajes_csv, None) #Estos next son para saltear los encabezadores
+    #
+    #         cliente = next(clientes_csv, None)
+    #         viaje = next(viajes_csv, None)
+    #         saldo = 0
+    #         while cliente:
+    #             print(f"{cliente[2]} = {viaje[0]}")
+    #             while viaje and viaje[0] == cliente[2]:
+    #                 try:
+    #                     monto = float(viaje[2])
+    #                 except ValueError:
+    #                     print("Se detectó en la columna de monto un valor no numérico")
+    #                 print(f"monto: {monto}")
+    #                 saldo += monto
+    #                 viaje = next(viajes_csv, None)
+    #             cliente = next(clientes_csv, None)
+    #         # while viaje:
+    #         #     while cliente and viaje[0] == cliente[2]:
+    #         #         try:
+    #         #             monto = float(viaje[2])
+    #         #         except ValueError:
+    #         #             print("Se detectó en la columna de monto un valor no numérico")
+    #         #         print(f"monto: {monto}")
+    #         #         saldo += monto
+    #         #         cliente = next(clientes_csv, None)
+    #         #     viaje = next(viajes_csv, None)
+    #         print("---------------------------------------------")
+    #         print(f"{emp_buscada} ${saldo}")
+    #         print("---------------------------------------------")
+    # except IOError:
+    #     print("Hubo un error al intentar abrir el archivo")
+    # except IndexError:
+    #     print("Hubo un problema con los datos del archivo. Verifique que no se hayan eliminado columnas del mismo.")
+    #
 
 archivos_clientes = ['clientes.csv']
 archivos_viajes = ['viajes.csv']
