@@ -72,12 +72,24 @@ def GuardarLogs(accion):
 def BuscarCliente(busqueda, archivo):
     try:
         with open (archivo) as f:
-            clientes_csv = csv.DictReader(f)
+            fieldnames = ['Nombre', 'Dirección', 'Documento', 'Fecha Alta', 'Correo Electrónico', 'Empresa']
+            clientes_csv = csv.DictReader(f, fieldnames = fieldnames)
             contador = 0
             for row in clientes_csv:
                 if busqueda in row['Nombre']:
                     contador += 1
                     print(row)
+                    for campo in fieldnames:
+                        if len(row[campo]) == 0:
+                            print(f"El campo {campo} se encuentra vacío")
+                    try:
+                        documento = int(row['Documento'])
+                    except ValueError:
+                        print(f"El Documento del Cliente no corresponde a un valor numérico")
+                    if len(row['Documento']) < 7 or len(row['Documento']) > 8:
+                        print(f"El Documento del cliente es inválido")
+                    if "@" not in row['Correo Electrónico'] or "." not in row['Correo Electrónico']:
+                        print(f"El correo electrónico del cliente es inválido")
             if contador == 0:
                 print("No se encontró ningún cliente con el nombre ingresado")
 

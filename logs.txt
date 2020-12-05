@@ -220,3 +220,14 @@
 2020-12-05 12:28:18.411831 : Menú
 2020-12-05 12:33:17.914097 : Búsqueda de Usuarios por empresa
 2020-12-05 12:33:26.005727 : Menú
+2020-12-05 15:35:15.896275 : Se inicia el programa
+2020-12-05 15:35:15.896342 : Menú
+2020-12-05 15:35:17.811942 : Búsqueda de Cliente por Nombre
+2020-12-05 15:45:13.590967 : Se inicia el programa
+2020-12-05 15:45:13.591023 : Menú
+2020-12-05 15:45:15.239068 : Búsqueda de Cliente por Nombre
+2020-12-05 15:45:19.833030 : Menú
+2020-12-05 15:47:34.350547 : Se inicia el programa
+2020-12-05 15:47:34.350606 : Menú
+2020-12-05 15:47:35.689833 : Búsqueda de Cliente por Nombre
+2020-12-05 15:47:40.200228 : Menú
