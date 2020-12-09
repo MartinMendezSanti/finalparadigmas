@@ -231,3 +231,46 @@
 2020-12-05 15:47:34.350606 : Menú
 2020-12-05 15:47:35.689833 : Búsqueda de Cliente por Nombre
 2020-12-05 15:47:40.200228 : Menú
+2020-12-09 11:30:43.502227 : Se inicia el programa
+2020-12-09 11:30:43.503783 : Menú
+2020-12-09 11:30:47.955956 : Búsqueda de Usuarios por empresa
+2020-12-09 11:31:16.657257 : Se inicia el programa
+2020-12-09 11:31:16.657367 : Menú
+2020-12-09 11:31:19.461766 : Búsqueda de Usuarios por empresa
+2020-12-09 11:33:08.684130 : Se inicia el programa
+2020-12-09 11:33:08.684186 : Menú
+2020-12-09 11:33:11.295977 : Búsqueda de Usuarios por empresa
+2020-12-09 11:34:38.109670 : Se inicia el programa
+2020-12-09 11:34:38.109746 : Menú
+2020-12-09 11:34:39.698882 : Búsqueda de Usuarios por empresa
+2020-12-09 11:36:14.888300 : Se inicia el programa
+2020-12-09 11:36:14.888394 : Menú
+2020-12-09 11:36:16.215431 : Búsqueda de Usuarios por empresa
+2020-12-09 11:43:35.911422 : Se inicia el programa
+2020-12-09 11:43:35.911619 : Menú
+2020-12-09 11:43:37.986160 : Búsqueda de Usuarios por empresa
+2020-12-09 11:45:45.717263 : Se inicia el programa
+2020-12-09 11:45:45.717315 : Menú
+2020-12-09 11:45:47.256569 : Búsqueda de Usuarios por empresa
+2020-12-09 11:45:49.603733 : Menú
+2020-12-09 11:53:50.695851 : Se inicia el programa
+2020-12-09 11:53:50.695913 : Menú
+2020-12-09 11:53:51.825805 : Búsqueda de Usuarios por empresa
+2020-12-09 11:53:55.145248 : Menú
+2020-12-09 11:54:54.731360 : Se inicia el programa
+2020-12-09 11:54:54.731449 : Menú
+2020-12-09 11:54:55.824655 : Búsqueda de Usuarios por empresa
+2020-12-09 11:54:58.843622 : Menú
+2020-12-09 11:56:31.762705 : Se inicia el programa
+2020-12-09 11:56:31.762748 : Menú
+2020-12-09 11:56:32.857490 : Búsqueda de Usuarios por empresa
+2020-12-09 11:56:47.135468 : Se inicia el programa
+2020-12-09 11:56:47.135526 : Menú
+2020-12-09 11:56:48.127766 : Búsqueda de Usuarios por empresa
+2020-12-09 11:57:30.476046 : Se inicia el programa
+2020-12-09 11:57:30.476098 : Menú
+2020-12-09 11:57:31.740377 : Búsqueda de Usuarios por empresa
+2020-12-09 11:57:34.025371 : Menú
+2020-12-09 12:05:34.131146 : Se inicia el programa
+2020-12-09 12:05:34.131193 : Menú
+2020-12-09 12:05:35.256009 : Búsqueda de Usuarios por empresa

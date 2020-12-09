@@ -96,29 +96,58 @@ def BuscarCliente(busqueda, archivo):
     except IOError:
         print("Hubo un error al intentar abrir el archivo")
 
-def BuscarUsuariosPorEmpresa(emp_buscada, archivo):
+def BuscarUsuariosPorEmpresa(archivo):
+
+    #Si se desea que en lugar de mostrar los clientes de todas las empresas mueste solo los de una empresa que indique el cliente se puede
+    #utilizar el siguiente código (pasando el nombre de la empresa como el parámetro emp_buscada)
+
+    # try:
+    #     with open (archivo) as f:
+    #         empresas_csv = csv.reader(f)
+    #         encabezadores = next(empresas_csv, None)
+    #         contador = 0
+    #         clientes_empresa = []
+    #         cliente = next(empresas_csv, None)
+    #         while cliente:
+    #             if  emp_buscada in cliente[5]:
+    #                 contador += 1
+    #                 clientes_empresa.append(cliente)
+    #             cliente = next(empresas_csv, None)
+    #         if contador > 0:
+    #             print("---------------------------------------------")
+    #             print(f"Empresa: {emp_buscada}\nTotal Usuarios: {contador}")
+    #             print("---------------------------------------------")
+    #             print(encabezadores)
+    #             for cliente in clientes_empresa:
+    #                 print(cliente)
+    #                 VerificacionClientes(cliente)
+    #         else:
+    #             print("No se encontraron usuarios para la empresa buscada. Verifique que ingresó correctamente el nombre de la empresa.")
+    # except IOError:
+    #     print("Hubo un error al intentar abrir el archivo")
+    # except IndexError:
+    #     print("Hubo un problema con los datos del archivo. Verifique que no se hayan eliminado columnas del mismo.")
+
     try:
         with open (archivo) as f:
             empresas_csv = csv.reader(f)
             encabezadores = next(empresas_csv, None)
-            contador = 0
-            clientes_empresa = []
             cliente = next(empresas_csv, None)
             while cliente:
-                if  emp_buscada in cliente[5]:
+                empresa = cliente[5]
+                clientes_empresa = []
+                contador = 0
+                while cliente and empresa == cliente[5]:
                     contador += 1
                     clientes_empresa.append(cliente)
-                cliente = next(empresas_csv, None)
-            if contador > 0:
+                    cliente = next(empresas_csv, None)
                 print("---------------------------------------------")
-                print(f"Empresa: {emp_buscada}\nTotal Usuarios: {contador}")
+                print(f"Empresa: {empresa}\nTotal Usuarios: {contador}")
                 print("---------------------------------------------")
                 print(encabezadores)
                 for cliente in clientes_empresa:
                     print(cliente)
                     VerificacionClientes(cliente)
-            else:
-                print("No se encontraron usuarios para la empresa buscada. Verifique que ingresó correctamente el nombre de la empresa.")
     except IOError:
         print("Hubo un error al intentar abrir el archivo")
     except IndexError:
@@ -289,10 +318,9 @@ while opcion != 5:
     elif opcion == 2:
         mensaje = "Búsqueda de Usuarios por empresa"
         GuardarLogs(mensaje)
-        empresa = input("Ingrese el nombre de la empresa que desea buscar:\n")
-        f_clientes = input("Ingrese el nombre del archivo de clientes con el que desea trabajar:\n")
+        f_clientes = input("Ingrese el nombre del archivo de clientes con el que desea trabajar (incluya el '.csv'):\n")
         if f_clientes in archivos_clientes:
-            BuscarUsuariosPorEmpresa(empresa, f_clientes)
+            BuscarUsuariosPorEmpresa(f_clientes)
         else:
             print("No existe el archivo ingresado")
         print("")
