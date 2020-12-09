@@ -133,6 +133,7 @@ def BuscarUsuariosPorEmpresa(archivo):
             empresas_csv = csv.reader(f)
             encabezadores = next(empresas_csv, None)
             cliente = next(empresas_csv, None)
+            clientes_empresa = []
             while cliente:
                 empresa = cliente[5]
                 clientes_empresa = []
@@ -145,9 +146,9 @@ def BuscarUsuariosPorEmpresa(archivo):
                 print(f"Empresa: {empresa}\nTotal Usuarios: {contador}")
                 print("---------------------------------------------")
                 print(encabezadores)
-                for cliente in clientes_empresa:
-                    print(cliente)
-                    VerificacionClientes(cliente)
+                for usuario in clientes_empresa:
+                    print(usuario)
+                    VerificacionClientes(usuario)
     except IOError:
         print("Hubo un error al intentar abrir el archivo")
     except IndexError:

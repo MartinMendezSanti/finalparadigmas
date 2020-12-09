@@ -274,3 +274,18 @@
 2020-12-09 12:05:34.131146 : Se inicia el programa
 2020-12-09 12:05:34.131193 : Menú
 2020-12-09 12:05:35.256009 : Búsqueda de Usuarios por empresa
+2020-12-09 12:07:28.818200 : Se inicia el programa
+2020-12-09 12:07:28.818260 : Menú
+2020-12-09 12:07:29.864070 : Búsqueda de Usuarios por empresa
+2020-12-09 12:15:57.865496 : Se inicia el programa
+2020-12-09 12:15:57.865566 : Menú
+2020-12-09 12:15:58.829567 : Búsqueda de Usuarios por empresa
+2020-12-09 12:16:01.795934 : Menú
+2020-12-09 12:16:39.493327 : Se inicia el programa
+2020-12-09 12:16:39.493385 : Menú
+2020-12-09 12:16:40.548655 : Búsqueda de Usuarios por empresa
+2020-12-09 12:16:43.577490 : Menú
+2020-12-09 12:17:44.935404 : Se inicia el programa
+2020-12-09 12:17:44.935465 : Menú
+2020-12-09 12:17:46.345645 : Búsqueda de Usuarios por empresa
+2020-12-09 12:17:49.754484 : Menú
