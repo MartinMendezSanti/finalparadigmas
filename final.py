@@ -5,6 +5,8 @@ import os
 
 #En ambas funciones de verificación se decidió indicar por defecto la cantidad de elementos que debe tener la lista,
 #en lugar de utilizar un len para calcularlo. Esto se pensó así para que se puedan detectar correctamente errores en los campos.
+#En caso de agregar una función para que los archivos se puedan generar desde el mismo programa se deben utilizar estas mismas
+#validaciones para completar sus campos.
 def VerificacionClientes(linea):
     #Esta función notifica cuando hay algún error en alguno de los campos pero no invalida el registro en caso de haberlo.
     #Si se invalidara traería problemas en los cálculos de saldos.
@@ -46,16 +48,15 @@ def VerificacionViajes(linea):
             flag = 1
         monto = float(linea[2])
     except IndexError:
-        print(f"El monto detectado para el viaje del cliente DNI {linea[0]} del día {linea[1]} posee un error de formato")
+        print(f"El monto detectado para el viaje del cliente DNI {linea[0]} del día {linea[1]} posee un error de formato, por lo que no es tenido en cuenta.")
         flag = 1
     except ValueError:
-        print(f"El monto detectado para el viaje del cliente DNI {linea[0]} del día {linea[1]} no es un valor numérico")
+        print(f"El monto detectado para el viaje del cliente DNI {linea[0]} del día {linea[1]} no es un valor numérico, por lo que no es tenido en cuenta.")
         flag = 1
 
     if flag == 0:
         return linea
     else:
-        print(f"El registro para el viaje del cliente DNI {linea[0]} del día {linea[1]} no fue tenida en cuenta")
         return False
 
 
