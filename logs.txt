@@ -289,3 +289,115 @@
 2020-12-09 12:17:44.935465 : Menú
 2020-12-09 12:17:46.345645 : Búsqueda de Usuarios por empresa
 2020-12-09 12:17:49.754484 : Menú
+2020-12-10 11:46:54.724325 : Se inicia el programa
+2020-12-10 11:46:54.726008 : Menú
+2020-12-10 11:46:57.984941 : Búsqueda de Cliente por Nombre
+2020-12-10 11:47:03.809233 : Menú
+2020-12-10 11:47:36.478451 : Búsqueda de Usuarios por empresa
+2020-12-10 11:47:42.075465 : Menú
+2020-12-10 11:47:53.951542 : Consulta de saldo por empresa
+2020-12-10 11:48:01.150627 : Menú
+2020-12-10 11:48:32.099086 : Consultar total de viajes y monto por cliente
+2020-12-10 11:48:54.729922 : Menú
+2020-12-10 11:54:50.946775 : Menú
+2020-12-10 11:54:57.178731 : Menú
+2020-12-10 11:55:04.915911 : Menú
+2020-12-10 11:55:10.848921 : Búsqueda de Cliente por Nombre
+2020-12-10 11:55:17.032836 : Menú
+2020-12-10 11:56:38.456335 : Búsqueda de Usuarios por empresa
+2020-12-10 11:56:41.536052 : Menú
+2020-12-10 11:57:07.414500 : Consulta de saldo por empresa
+2020-12-10 11:57:11.761850 : Menú
+2020-12-10 11:57:18.901181 : Consultar total de viajes y monto por cliente
+2020-12-10 11:57:21.565102 : Menú
+2020-12-10 11:57:29.662395 : Consultar total de viajes y monto por cliente
+2020-12-10 11:57:39.729900 : Menú
+2020-12-10 11:57:44.447733 : Búsqueda de Cliente por Nombre
+2020-12-10 11:57:49.626791 : Menú
+2020-12-10 11:57:54.331966 : Se sale del programa
+2020-12-10 12:04:53.925953 : Se inicia el programa
+2020-12-10 12:04:53.926007 : Menú
+2020-12-10 12:04:55.561481 : Búsqueda de Cliente por Nombre
+2020-12-10 12:05:19.131140 : Se inicia el programa
+2020-12-10 12:05:19.131190 : Menú
+2020-12-10 12:05:20.462941 : Búsqueda de Cliente por Nombre
+2020-12-10 12:05:25.730729 : Menú
+2020-12-10 12:05:40.612330 : Búsqueda de Cliente por Nombre
+2020-12-10 12:05:53.143956 : Menú
+2020-12-10 12:05:57.235849 : Búsqueda de Cliente por Nombre
+2020-12-10 12:06:00.183864 : Menú
+2020-12-10 12:06:07.201288 : Se sale del programa
+2020-12-10 12:10:41.845242 : Se inicia el programa
+2020-12-10 12:10:41.845294 : Menú
+2020-12-10 12:10:47.865876 : Búsqueda de Cliente por Nombre
+2020-12-10 12:10:56.527975 : Menú
+2020-12-10 12:10:58.456316 : Se sale del programa
+2020-12-10 12:11:22.054667 : Se inicia el programa
+2020-12-10 12:11:22.054720 : Menú
+2020-12-10 12:11:23.477932 : Búsqueda de Cliente por Nombre
+2020-12-10 12:11:31.342743 : Menú
+2020-12-10 12:11:38.007408 : Búsqueda de Usuarios por empresa
+2020-12-10 12:11:47.212553 : Menú
+2020-12-10 12:11:51.314963 : Búsqueda de Usuarios por empresa
+2020-12-10 12:12:01.144910 : Menú
+2020-12-10 12:12:18.459239 : Consulta de saldo por empresa
+2020-12-10 12:12:28.416883 : Menú
+2020-12-10 12:12:32.975095 : Consulta de saldo por empresa
+2020-12-10 12:12:39.007131 : Menú
+2020-12-10 12:12:54.121479 : Consultar total de viajes y monto por cliente
+2020-12-10 12:13:35.717189 : Menú
+2020-12-10 12:13:51.833456 : Consultar total de viajes y monto por cliente
+2020-12-10 12:14:14.656974 : Menú
+2020-12-10 12:15:12.925242 : Consultar total de viajes y monto por cliente
+2020-12-10 12:15:24.301144 : Menú
+2020-12-10 13:51:35.284486 : Se inicia el programa
+2020-12-10 13:51:35.284536 : Menú
+2020-12-10 13:51:37.071332 : Consulta de saldo por empresa
+2020-12-10 13:52:07.075404 : Se inicia el programa
+2020-12-10 13:52:07.075453 : Menú
+2020-12-10 13:52:08.135852 : Consulta de saldo por empresa
+2020-12-10 13:54:22.072034 : Se inicia el programa
+2020-12-10 13:54:22.072096 : Menú
+2020-12-10 13:54:23.707266 : Consulta de saldo por empresa
+2020-12-10 13:55:44.466993 : Se inicia el programa
+2020-12-10 13:55:44.467073 : Menú
+2020-12-10 13:55:45.640360 : Consulta de saldo por empresa
+2020-12-10 13:56:33.728251 : Se inicia el programa
+2020-12-10 13:56:33.728320 : Menú
+2020-12-10 13:56:36.129153 : Consulta de saldo por empresa
+2020-12-10 13:58:02.157295 : Se inicia el programa
+2020-12-10 13:58:02.157377 : Menú
+2020-12-10 13:58:03.219582 : Consulta de saldo por empresa
+2020-12-10 14:01:23.584175 : Se inicia el programa
+2020-12-10 14:01:23.584247 : Menú
+2020-12-10 14:01:25.922033 : Consulta de saldo por empresa
+2020-12-10 14:02:29.902352 : Se inicia el programa
+2020-12-10 14:02:29.902448 : Menú
+2020-12-10 14:02:33.193641 : Consulta de saldo por empresa
+2020-12-10 14:02:44.005381 : Menú
+2020-12-10 14:07:13.243422 : Se sale del programa
+2020-12-10 14:07:17.762034 : Se inicia el programa
+2020-12-10 14:07:17.762084 : Menú
+2020-12-10 14:07:19.021333 : Consulta de saldo por empresa
+2020-12-10 14:07:28.586773 : Menú
+2020-12-10 14:07:30.444591 : Consulta de saldo por empresa
+2020-12-10 14:07:41.408059 : Menú
+2020-12-10 14:07:58.758904 : Consulta de saldo por empresa
+2020-12-10 14:08:08.475570 : Menú
+2020-12-10 14:08:19.056927 : Se sale del programa
+2020-12-10 14:09:11.972646 : Se inicia el programa
+2020-12-10 14:09:11.972715 : Menú
+2020-12-10 14:09:16.218940 : Consulta de saldo por empresa
+2020-12-10 14:09:22.910934 : Menú
+2020-12-10 14:27:23.497896 : Se sale del programa
+2020-12-10 14:27:27.294030 : Se inicia el programa
+2020-12-10 14:27:27.294105 : Menú
+2020-12-10 14:27:28.448980 : Consulta de saldo por empresa
+2020-12-10 14:27:34.504935 : Menú
+2020-12-10 14:27:36.674478 : Consulta de saldo por empresa
+2020-12-10 14:27:43.146658 : Menú
+2020-12-10 14:27:45.126553 : Consulta de saldo por empresa
+2020-12-10 14:27:53.411746 : Menú
+2020-12-10 14:27:56.429595 : Consulta de saldo por empresa
+2020-12-10 14:28:05.404622 : Menú
+2020-12-10 14:31:22.022951 : Se sale del programa

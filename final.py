@@ -1,7 +1,13 @@
 import datetime
 import csv
+import os
 
+
+#En ambas funciones de verificación se decidió indicar por defecto la cantidad de elementos que debe tener la lista,
+#en lugar de utilizar un len para calcularlo. Esto se pensó así para que se puedan detectar correctamente errores en los campos.
 def VerificacionClientes(linea):
+    #Esta función notifica cuando hay algún error en alguno de los campos pero no invalida el registro en caso de haberlo.
+    #Si se invalidara traería problemas en los cálculos de saldos.
     for i in range (6):
         if len(linea[1]) == 0:
             print(f"Se detectó un campo sin datos para el cliente {linea[0]} DNI {linea[2]}")
@@ -17,6 +23,8 @@ def VerificacionClientes(linea):
         print(f"Se detectó un correo inválido para el cliente {linea[0]}")
 
 def VerificacionViajes(linea):
+    #Esta función notifica cuando hay algún error en alguno de los campos pero solo invalida el registro en caso de
+    #que el error se encuentre en la columna de "monto". De esta manera se evitan los errores en el cálculo de los montos.
     flag = 0
     for i in range (3):
         if linea[i] == "":
@@ -154,7 +162,7 @@ def BuscarUsuariosPorEmpresa(archivo):
     except IndexError:
         print("Hubo un problema con los datos del archivo. Verifique que no se hayan eliminado columnas del mismo.")
 
-def BuscarSaldoPorEmpresa(archivo_clientes, archivo_viajes):
+def BuscarSaldoPorEmpresa(emp_buscada, archivo_clientes, archivo_viajes):
 
 
     try:
@@ -171,37 +179,75 @@ def BuscarSaldoPorEmpresa(archivo_clientes, archivo_viajes):
     except IOError:
         print("Hubo un error al intentar abrir el archivo de viajes")
 
+
     try:
-        #Como el archivo de clientes no se ordena por el documento (que es el elemento que relaciona ambos archivos)
-        # se debe ir iterando la lista de viajes por cada línea del archivo clientes que se procesa.
         with open (archivo_clientes) as f_clientes:
             clientes_csv = csv.reader(f_clientes)
             next(clientes_csv, None) #Este next es para saltear los encabezadores
             cliente = next(clientes_csv, None)
+            contador = 0
             while cliente:
-                VerificacionClientes(cliente)
                 saldo = 0
-                empresa = cliente[5]
-                while cliente and cliente[5] == empresa:
-                    for viaje in lista_viajes:
-                        if viaje[0] == cliente[2]:
-                            flag = VerificacionViajes(viaje)
-                            if flag is not False:
-                                try:
-                                    monto = float(viaje[2])
-                                except ValueError:
-                                    print("Se detectó en la columna de monto un valor no numérico en el archivo de viajes:")
-                                    print(f"Cliente Documento {viaje[0]}, fecha de viaje {viaje[1]}")
-                                saldo += monto
+                if emp_buscada in cliente[5]:
+                    nueva_emp_buscada = cliente[5]
+                    contador = 1
+                    while cliente and cliente[5] == nueva_emp_buscada:
+                        for viaje in lista_viajes:
+                            if viaje[0] == cliente[2]:
+                                flag = VerificacionViajes(viaje)
+                                if flag is not False:
+                                    try:
+                                        monto = float(viaje[2])
+                                    except ValueError:
+                                        print("Se detectó en la columna de monto un valor no numérico en el archivo de viajes:")
+                                    saldo += monto
+                        cliente = next(clientes_csv, None)
+
+                    print("---------------------------------------------")
+                    print ("{0}: ${1:.2f}".format(nueva_emp_buscada, saldo))
+                    print("---------------------------------------------")
+                else:
                     cliente = next(clientes_csv, None)
 
-                print("---------------------------------------------")
-                print ("{0}: ${1:.2f}".format(empresa, saldo))
-                print("---------------------------------------------")
+            if contador == 0:
+                print("No se encontró ningúna empresa que coincida con la búsqueda")
+
     except IOError:
         print("Hubo un error al intentar abrir el archivo")
     except IndexError:
         print("Hubo un problema con los datos del archivo. Verifique que no se hayan eliminado columnas del mismo.")
+
+    # try:
+    #     #Como el archivo de clientes no se ordena por el documento (que es el elemento que relaciona ambos archivos)
+    #     # se debe ir iterando la lista de viajes por cada línea del archivo clientes que se procesa.
+    #     with open (archivo_clientes) as f_clientes:
+    #         clientes_csv = csv.reader(f_clientes)
+    #         next(clientes_csv, None) #Este next es para saltear los encabezadores
+    #         cliente = next(clientes_csv, None)
+    #         while cliente:
+    #             VerificacionClientes(cliente)
+    #             saldo = 0
+    #             empresa = cliente[5]
+    #             while cliente and cliente[5] == empresa:
+    #                 for viaje in lista_viajes:
+    #                     if viaje[0] == cliente[2]:
+    #                         flag = VerificacionViajes(viaje)
+    #                         if flag is not False:
+    #                             try:
+    #                                 monto = float(viaje[2])
+    #                             except ValueError:
+    #                                 print("Se detectó en la columna de monto un valor no numérico en el archivo de viajes:")
+    #                                 print(f"Cliente Documento {viaje[0]}, fecha de viaje {viaje[1]}")
+    #                             saldo += monto
+    #                 cliente = next(clientes_csv, None)
+    #
+    #             print("---------------------------------------------")
+    #             print ("{0}: ${1:.2f}".format(empresa, saldo))
+    #             print("---------------------------------------------")
+    # except IOError:
+    #     print("Hubo un error al intentar abrir el archivo")
+    # except IndexError:
+    #     print("Hubo un problema con los datos del archivo. Verifique que no se hayan eliminado columnas del mismo.")
 
     #Si no se quisiera pasar el archivo de viajes a lista y trabajarlo directamente desde el csv sería así:
         # try:
@@ -253,12 +299,12 @@ def BuscarDatosTotalCliente(persona, archivo_clientes, archivo_viajes):
             cliente = next(clientes_csv, None)
             contador = 0
             while cliente:
-                VerificacionClientes(cliente)
                 if cliente[2] == persona:
                     contador += 1
                     print("---------------------------------------------")
                     print(f"Documento: {cliente[2]}")
                     print("---------------------------------------------")
+                    VerificacionClientes(cliente)
                     print(encabezadores)
                     print(cliente)
                     saldo = 0
@@ -289,8 +335,8 @@ def BuscarDatosTotalCliente(persona, archivo_clientes, archivo_viajes):
     except IOError:
         print("Hubo un error al intentar abrir el archivo de clientes")
 
-archivos_clientes = ['clientes.csv']
-archivos_viajes = ['viajes.csv']
+#archivos_clientes = ['clientes.csv']
+#archivos_viajes = ['viajes.csv']
 print("Bienvenido al gestor de facturación de PAR-Taxis")
 mensaje = "Se inicia el programa"
 GuardarLogs(mensaje)
@@ -310,8 +356,9 @@ while opcion != 5:
         mensaje = "Búsqueda de Cliente por Nombre"
         GuardarLogs(mensaje)
         cliente = input("Ingrese el nombre del cliente que desea buscar:\n")
-        f_clientes = input("Ingrese el nombre del archivo de clientes con el que desea trabajar:\n")
-        if f_clientes in archivos_clientes:
+        f_clientes = input("Ingrese el nombre del archivo de clientes con el que desea trabajar (incluya el '.csv'):\n")
+        #if f_clientes in archivos_clientes:
+        if os.path.isfile(f_clientes) == True:
             BuscarCliente(cliente, f_clientes)
         else:
             print("No existe el archivo ingresado")
@@ -320,7 +367,8 @@ while opcion != 5:
         mensaje = "Búsqueda de Usuarios por empresa"
         GuardarLogs(mensaje)
         f_clientes = input("Ingrese el nombre del archivo de clientes con el que desea trabajar (incluya el '.csv'):\n")
-        if f_clientes in archivos_clientes:
+        #if f_clientes in archivos_clientes:
+        if os.path.isfile(f_clientes) == True:
             BuscarUsuariosPorEmpresa(f_clientes)
         else:
             print("No existe el archivo ingresado")
@@ -330,8 +378,10 @@ while opcion != 5:
         GuardarLogs(mensaje)
         f_clientes = input("Ingrese el nombre del archivo de clientes con el que desea trabajar (incluya el '.csv'):\n")
         f_viajes = input("Ingrese el nombre del archivo de viajes con el que desea trabajar (incluya el '.csv'):\n")
-        if f_clientes in archivos_clientes and f_viajes in archivos_viajes:
-            BuscarSaldoPorEmpresa(f_clientes, f_viajes)
+        empresa = input("Ingrese el nombre de la empresa que desea buscar:\n")
+        #if f_clientes in archivos_clientes and f_viajes in archivos_viajes:
+        if os.path.isfile(f_clientes) == True and os.path.isfile(f_viajes) == True:
+            BuscarSaldoPorEmpresa(empresa, f_clientes, f_viajes)
         else:
             print("No existe alguno de los archivos ingresados")
         print("")
@@ -341,12 +391,15 @@ while opcion != 5:
         cliente = input("Ingrese el Documento del cliente que desea buscar (sin puntos):\n")
         f_clientes = input("Ingrese el nombre del archivo de clientes con el que desea trabajar (incluya el '.csv'):\n")
         f_viajes = input("Ingrese el nombre del archivo de viajes con el que desea trabajar (incluya el '.csv'):\n")
-        if f_clientes in archivos_clientes and f_viajes in archivos_viajes:
+        #if f_clientes in archivos_clientes and f_viajes in archivos_viajes:
+        if os.path.isfile(f_clientes) == True and os.path.isfile(f_viajes) == True:
             BuscarDatosTotalCliente(cliente, f_clientes, f_viajes)
         else:
             print("No existe alguno de los archivos ingresados")
         print("")
     elif opcion == 5:
+        mensaje = "Se sale del programa"
+        GuardarLogs(mensaje)
         print("Adios")
         print("")
     else:
